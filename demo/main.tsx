@@ -50,7 +50,7 @@ export function App() {
   )
 
   const [color] = usePaneInput(pane, 'state')
-  usePaneInput(pane, 'eventBased', {}, (a) => {
+  usePaneInput(pane, 'eventBased', (a) => {
     ref.current!.material.color.set(a.value)
   })
 
@@ -76,6 +76,7 @@ export function App() {
             />
           </EffectComposer>
           <Box
+            onClick={(e) => console.log(e)}
             color={color}
             position={[-1, 0, 0]}
           />
@@ -83,13 +84,6 @@ export function App() {
             ref={ref}
             position={[1, 0, 0]}
           />
-          <mesh
-            position-y={2}
-            ref={ref}
-          >
-            <boxGeometry />
-            <meshStandardMaterial />
-          </mesh>
         </Selection>
         <Stats />
       </Canvas>

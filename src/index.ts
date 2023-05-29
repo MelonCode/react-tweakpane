@@ -45,6 +45,14 @@ export function usePaneInput<T extends Bindable, K extends keyof T>(
   onChange: (event: TpChangeEvent<T[K]>) => void
 ): [never, (value: T[K]) => void]
 
+// Skips inputParams
+/** Does not return the value and doesn't trigger an update because onChange is specified */
+export function usePaneInput<T extends Bindable, K extends keyof T>(
+  paneRef: MutableRefObject<PaneInstance<T>>,
+  key: K,
+  onChange: (event: TpChangeEvent<T[K]>) => void
+): [never, (value: T[K]) => void]
+
 /**
  * Returns the value and triggers an update
  */
@@ -65,7 +73,10 @@ export function usePaneInput<T extends Bindable, K extends keyof T>(
 export function usePaneInput<T extends Bindable, K extends keyof T>(
   paneRef: MutableRefObject<PaneInstance<T>>,
   key: K,
-  inputParams: InputParams | undefined = {},
+  inputParamsArg:
+    | InputParams
+    | ((event: TpChangeEvent<T[K]>) => void)
+    | undefined = {},
   onChange: ((event: TpChangeEvent<T[K]>) => void) | undefined = undefined
 ) {
   const [value, set] = useState(paneRef.current.params[key])
@@ -84,6 +95,9 @@ export function usePaneInput<T extends Bindable, K extends keyof T>(
     const handler = onChange
       ? onChange
       : (event: TpChangeEvent<T[K]>) => set(event.value)
+
+    const inputParams =
+      typeof inputParamsArg === 'function' ? {} : inputParamsArg
 
     const input = pane
       .addInput(paneRef.current.params, key, inputParams)
