@@ -1,0 +1,77 @@
+:root {
+  font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
+:root {
+  --color-bg: #25292e;
+  --color-bg-light: #202428;
+  --color-primary: white;
+}
+
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+
+a:hover {
+  color: #535bf2;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+html,
+body,
+#root,
+#app {
+  height: 100%;
+  padding: 0;
+}
+
+body {
+  background: var(--color-bg);
+  color: var(--color-primary);
+}
+
+.app {
+  height: 100%;
+  width: 100%;
+}
+
+.canvas {
+  display: block;
+  height: 100%;
+  width: 100%;
+
+  background: conic-gradient(
+      from 90deg at 1px 1px,
+      #0000 90deg,
+      rgba(255, 255, 255, 0.02) 0
+    )
+    0 0/50px 50px;
+}
