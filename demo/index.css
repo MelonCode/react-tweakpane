@@ -51,6 +51,7 @@ body,
 #app {
   height: 100%;
   padding: 0;
+  overflow-x: hidden;
 }
 
 body {
@@ -74,4 +75,14 @@ body {
       rgba(255, 255, 255, 0.02) 0
     )
     0 0/50px 50px;
+}
+
+.tooltip {
+  pointer-events: none;
+  user-select: none;
+  z-index: 1;
+  position: absolute;
+  top: 75%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }

@@ -1,17 +1,35 @@
-import { Bindable } from '@tweakpane/core'
-import { useEffect, useLayoutEffect, useRef } from 'react'
+import { MutableRefObject, useEffect, useLayoutEffect, useRef } from 'react'
 import { Pane } from 'tweakpane'
-import { PaneConfig } from 'tweakpane/dist/types/pane/pane-config'
 
-export interface PaneInstance<T extends Bindable> {
+// This one is copied from tweakpane to avoid dist dependency
+interface PaneConfig {
+  /**
+   * The custom container element of the pane.
+   */
+  container?: HTMLElement
+  /**
+   * The default expansion of the pane.
+   */
+  expanded?: boolean
+  /**
+   * The pane title that can expand/collapse the entire pane.
+   */
+  title?: string
+  /**
+   * @hidden
+   */
+  document?: Document
+}
+
+export interface PaneInstance<T extends Object> {
   instance: Pane | null
   params: T
 }
 
-export function useTweakpane<T extends Bindable>(
-  params: T,
+export function useTweakpane<T extends Object>(
+  params: T = {} as T,
   paneConfig: PaneConfig = {}
-) {
+): MutableRefObject<PaneInstance<T>> {
   const paneRef = useRef<PaneInstance<T>>({
     instance: null,
     params: params,

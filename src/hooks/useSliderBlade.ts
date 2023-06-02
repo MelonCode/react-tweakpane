@@ -24,7 +24,7 @@ type BladeRef = MutableRefObject<SliderApi>
 export function useSliderBlade<T extends Bindable, V>(
   paneRef: MutableRefObject<FolderInstance<T>>,
   bladeParams: UseSliderBladeParams
-): [V, (value: V) => void, BladeRef]
+): [number, (value: number) => void, BladeRef]
 
 export function useSliderBlade<T extends Bindable, V>(
   paneRef: MutableRefObject<FolderInstance<T>>,
@@ -32,7 +32,7 @@ export function useSliderBlade<T extends Bindable, V>(
   onChange: (event: TpChangeEvent<number>) => void
 ): [never, (value: number) => void, BladeRef]
 
-export function useSliderBlade<T extends Bindable, V>(
+export function useSliderBlade<T extends Bindable>(
   paneRef: MutableRefObject<FolderInstance<T>>,
   params: UseSliderBladeParams,
   onChange?: (event: TpChangeEvent<number>) => void

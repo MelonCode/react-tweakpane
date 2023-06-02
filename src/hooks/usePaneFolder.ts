@@ -1,19 +1,19 @@
-import { Bindable, FolderApi, FolderParams } from '@tweakpane/core'
-import { PaneInstance } from 'index'
-import { MutableRefObject, useEffect, useLayoutEffect, useRef } from 'react'
+import { FolderApi, FolderParams } from '@tweakpane/core'
+import { RefObject, useEffect, useLayoutEffect, useRef } from 'react'
+import { PaneInstance } from './useTweakpane'
 
-export interface FolderInstance<T extends Bindable> {
+export interface FolderInstance<T extends {}> {
   instance: FolderApi | null
   params: T
 }
 
-export function usePaneFolder<T extends Bindable>(
-  paneRef: MutableRefObject<PaneInstance<T>>,
+export function usePaneFolder<T extends {}>(
+  paneRef: RefObject<PaneInstance<T>>,
   folderParams: FolderParams
-) {
+): RefObject<FolderInstance<T>> {
   const folderRef = useRef<FolderInstance<T>>({
     instance: null,
-    params: paneRef.current.params,
+    params: paneRef.current?.params || ({} as T),
   })
 
   useEffect(() => {
@@ -31,12 +31,13 @@ export function usePaneFolder<T extends Bindable>(
   ])
 
   useLayoutEffect(() => {
-    const pane = paneRef.current.instance
+    const pane = paneRef.current?.instance
     if (pane == null) return
 
     const folder = pane.addFolder(folderParams)
 
     folderRef.current.instance = folder
+    folderRef.current.params = paneRef.current?.params || ({} as T)
 
     return () => {
       if (folder.element) folder.dispose()

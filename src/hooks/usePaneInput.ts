@@ -6,7 +6,7 @@ import {
 } from '@tweakpane/core'
 
 import {
-  MutableRefObject,
+  RefObject,
   useCallback,
   useLayoutEffect,
   useRef,
@@ -14,13 +14,13 @@ import {
 } from 'react'
 import { FolderInstance } from './usePaneFolder'
 
-type InputRef<T> = MutableRefObject<InputBindingApi<unknown, T>>
+type InputRef<T> = RefObject<InputBindingApi<unknown, T>>
 
 /**
  * Does not return the value and doesn't trigger an update because onChange is specified
  */
 export function usePaneInput<T extends Bindable, K extends keyof T>(
-  ref: MutableRefObject<FolderInstance<T>>,
+  ref: RefObject<FolderInstance<T>>,
   key: K,
   inputParams: InputParams | undefined,
   onChange: (event: TpChangeEvent<T[K]>) => void
@@ -29,7 +29,7 @@ export function usePaneInput<T extends Bindable, K extends keyof T>(
 // Skips inputParams
 /** Does not return the value and doesn't trigger an update because onChange is specified */
 export function usePaneInput<T extends Bindable, K extends keyof T>(
-  paneRef: MutableRefObject<FolderInstance<T>>,
+  paneRef: RefObject<FolderInstance<T>>,
   key: K,
   onChange: (event: TpChangeEvent<T[K]>) => void
 ): [never, (value: T[K]) => void, InputRef<T[K]>]
@@ -38,29 +38,33 @@ export function usePaneInput<T extends Bindable, K extends keyof T>(
  * Returns the value and triggers an update
  */
 export function usePaneInput<T extends Bindable, K extends keyof T>(
-  paneRef: MutableRefObject<FolderInstance<T>>,
+  paneRef: RefObject<FolderInstance<T>>,
   key: K,
   inputParams?: InputParams | undefined,
   onChange?: undefined
 ): [T[K], (value: T[K]) => void, InputRef<T[K]>]
 
 export function usePaneInput<T extends Bindable, K extends keyof T>(
-  paneRef: MutableRefObject<FolderInstance<T>>,
+  paneRef: RefObject<FolderInstance<T>>,
   key: K,
   inputParams?: InputParams | undefined,
   onChange?: undefined
 ): [T[K], (value: T[K]) => void, InputRef<T[K]>]
 
 export function usePaneInput<T extends Bindable, K extends keyof T>(
-  parentRef: MutableRefObject<FolderInstance<T>>,
+  parentRef: RefObject<FolderInstance<T>>,
   key: K,
   inputParamsArg:
     | InputParams
     | ((event: TpChangeEvent<T[K]>) => void)
     | undefined = {},
-  onChange: ((event: TpChangeEvent<T[K]>) => void) | undefined = undefined
+  onChangeArg: ((event: TpChangeEvent<T[K]>) => void) | undefined = undefined
 ) {
-  const [value, set] = useState(parentRef.current.params[key])
+  const inputParams = typeof inputParamsArg === 'function' ? {} : inputParamsArg
+  const onChange =
+    typeof inputParamsArg === 'function' ? inputParamsArg : onChangeArg
+
+  const [value, set] = useState(parentRef.current!.params[key])
 
   const inputRef = useRef<InputBindingApi<unknown, T[K]>>(null!)
 
@@ -72,15 +76,13 @@ export function usePaneInput<T extends Bindable, K extends keyof T>(
     inputRef.current.refresh()
   }, [])
 
-  const inputParams = typeof inputParamsArg === 'function' ? {} : inputParamsArg
-
   if (inputRef.current) {
     inputRef.current.hidden = Boolean(inputParams.hidden)
     inputRef.current.disabled = Boolean(inputParams.disabled)
   }
 
   useLayoutEffect(() => {
-    const pane = parentRef.current.instance
+    const pane = parentRef.current?.instance
     if (pane == null) return
 
     const handler: (event: TpChangeEvent<T[K]>) => void = onChange
@@ -88,7 +90,7 @@ export function usePaneInput<T extends Bindable, K extends keyof T>(
       : (event) => set(event.value)
 
     const input = pane
-      .addInput(parentRef.current.params, key, inputParams)
+      .addInput(parentRef.current!.params, key, inputParams)
       .on('change', handler)
 
     inputRef.current = input

@@ -8,7 +8,6 @@ import {
   useState,
 } from 'react'
 import { TextApi } from 'tweakpane'
-import { PaneInstance } from './useTweakpane'
 import { FolderInstance } from './usePaneFolder'
 
 interface UseTextBladeParams<T> extends BaseBladeParams {
