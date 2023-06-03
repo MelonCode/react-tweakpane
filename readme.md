@@ -1,40 +1,24 @@
 # React Tweakpane 🛠️
-
 ![CI](https://github.com/cocopon/tweakpane/workflows/CI/badge.svg)
 [![npm version](https://badge.fury.io/js/react-tweakpane.svg)](https://badge.fury.io/js/react-tweakpane)
 
-Enhance your React application experience with `react-tweakpane`! This library introduces a hook-based React wrapper for Tweakpane, a compact pane library for fine-tuning parameters and monitoring value changes. 📈
+
+<img width="960" alt="preview" src="https://github.com/MelonCode/react-tweakpane/assets/3682284/554b6c4f-61e0-4a22-b3bb-931f0267a632">
+
+Enhance your React application experience with `react-tweakpane`!<br>
+This library introduces a hook-based React wrapper for Tweakpane, a compact pane library for fine-tuning parameters and monitoring value changes. 📈
 
 For detailed information, be sure to visit the [Tweakpane documentation](https://cocopon.github.io/tweakpane/quick-tour/).
 
 ## Features 🌟
 
-- **Smart Types**: Intelligent interpretation of variable types.
+- **Smart Types**: Intelligent interpretation of variable types.<br>
+  <img width="360" alt="Smart Types Demo Gif" src="https://github.com/MelonCode/react-tweakpane/assets/3682284/22fcebac-89d8-43ef-b28b-f46567883cfb">
 - **Prop Change Listener**: Observes changes of passed props.
 - **Memoization**: Functions and objects passed into hooks do not cause re-renders or updates unless changed.
 - **Re-rendering Control**: Grants you granular control over component re-rendering in response to value changes.
 
 > **In Development** ⚙️: Please note, `react-tweakpane` is under active development. As such, some features might be currently missing. We appreciate your patience and encourage your feedback as we continue to improve and expand this library! 🚀
-
-## Roadmap 🛣️
-
-Here's a glimpse of what we've accomplished so far and what's in store for the future of `react-tweakpane`:
-
-- [x] **Core Functionality**
-- [x] **Inputs Hooks**
-- [x] **Folders Support**
-- [x] **Blades Support**
-- [ ] **Monitor Support**: We're working on adding support for monitors to make real-time monitoring more seamless.
-- [ ] **Separators**
-- [ ] **Tabs**
-- [ ] **Buttons**
-- [ ] **JSX Syntax**: We have plans to implement JSX syntax for a more intuitive and React-friendly experience.
-
-Please note that these are our current plans and might change based on feedback and development progress. We highly encourage your ideas and contributions in shaping the future of `react-tweakpane`.
-
-Stay tuned for updates! 🚀
-
-> _Have a suggestion or a feature request? Don't hesitate to open an issue or PR!_
 
 ## Usage 🎯
 
@@ -94,6 +78,7 @@ const pane = useTweakpane(
   }
 )
 
+// Input Options
 const [value, setValue] = usePaneInput(folder, 'value', {
   label: 'Pos',
   value: {
@@ -101,8 +86,6 @@ const [value, setValue] = usePaneInput(folder, 'value', {
     max: 10,
   },
 })
-
-// Input Options
 ```
 
 ### Using Blades ⚔️
@@ -171,6 +154,25 @@ useEffect(() => {
   })
 }, [])
 ```
+## Roadmap 🛣️
+
+Here's a glimpse of what we've accomplished so far and what's in store for the future of `react-tweakpane`:
+
+- [x] **Core Functionality**
+- [x] **Inputs Hooks**
+- [x] **Folders Support**
+- [x] **Blades Support**
+- [ ] **Monitor Support**: We're working on adding support for monitors to make real-time monitoring more seamless.
+- [ ] **Separators**
+- [ ] **Tabs**
+- [ ] **Buttons**
+- [ ] **JSX Syntax**: We have plans to implement JSX syntax for a more intuitive and React-friendly experience.
+
+Please note that these are our current plans and might change based on feedback and development progress. We highly encourage your ideas and contributions in shaping the future of `react-tweakpane`.
+
+Stay tuned for updates! 🚀
+
+> _Have a suggestion or a feature request? Don't hesitate to open an issue or PR!_
 
 ## How Does `react-tweakpane` Differ from `useTweaks`? 🕵️‍♂️
 
@@ -181,7 +183,7 @@ Both `react-tweakpane` and `useTweaks` aim to provide React-friendly interfaces 
 3. **Direct Tweakpane Object Access**: `react-tweakpane` gives you direct access to the underlying Tweakpane object, allowing for more advanced use cases.
 4. **Control Over Re-rendering**: `react-tweakpane` gives you more control on when your component re-renders after values change, potentially enhancing performance.
 
-### License 📄
+## License 📄
 
 This project is open source and available under the MIT License
 
