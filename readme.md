@@ -1,6 +1,7 @@
 # React Tweakpane 🛠️
 
-![CI](https://github.com/cocopon/tweakpane/workflows/CI/badge.svg)
+<!-- ![CI](https://github.com/cocopon/tweakpane/workflows/CI/badge.svg) -->
+
 [![npm version](https://badge.fury.io/js/react-tweakpane.svg)](https://badge.fury.io/js/react-tweakpane)
 
 <img width="960" alt="preview" src="https://github.com/MelonCode/react-tweakpane/assets/3682284/554b6c4f-61e0-4a22-b3bb-931f0267a632">
@@ -9,6 +10,8 @@ Enhance your React application experience with `react-tweakpane`!<br>
 This library introduces a hook-based React wrapper for Tweakpane, a compact pane library for fine-tuning parameters and monitoring value changes. 📈
 
 For detailed information, be sure to visit the [Tweakpane documentation](https://cocopon.github.io/tweakpane/quick-tour/).
+
+### [Demo](https://meloncode.github.io/react-tweakpane/)
 
 ## Features 🌟
 

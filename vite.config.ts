@@ -9,6 +9,7 @@ import { resolve } from 'path'
 export default defineConfig({
   plugins: [react(), tsconfigPaths(), dts()],
   build: {
+    emptyOutDir: true,
     lib: {
       entry: resolve(__dirname, 'index.ts'),
       name: 'react-tweakpane',

@@ -14,7 +14,10 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "size": "size-limit",
-    "analyze": "size-limit --why"
+    "analyze": "size-limit --why",
+    "build:demo": "vite build -c vite.demo.ts",
+    "deploy:demo": "gh-pages -d gh-pages",
+    "preview:demo": "vite preview -c vite.demo.ts"
   },
   "engines": {
     "node": ">=10"
@@ -38,6 +41,7 @@
     "@types/react-dom": "^18.2.4",
     "@types/three": "^0.152.1",
     "@vitejs/plugin-react": "^4.0.0",
+    "gh-pages": "^5.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "rollup": "^3.23.0",
