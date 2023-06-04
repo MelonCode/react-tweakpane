@@ -1,6 +1,6 @@
-import { FolderApi, FolderParams } from '@tweakpane/core'
 import { RefObject, useEffect, useLayoutEffect, useRef } from 'react'
 import { PaneInstance } from './useTweakpane'
+import { FolderApi, FolderParams } from 'tweakpane'
 
 export interface FolderInstance<T extends {}> {
   instance: FolderApi | null

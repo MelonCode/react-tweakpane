@@ -1,7 +1,7 @@
 # React Tweakpane 🛠️
+
 ![CI](https://github.com/cocopon/tweakpane/workflows/CI/badge.svg)
 [![npm version](https://badge.fury.io/js/react-tweakpane.svg)](https://badge.fury.io/js/react-tweakpane)
-
 
 <img width="960" alt="preview" src="https://github.com/MelonCode/react-tweakpane/assets/3682284/554b6c4f-61e0-4a22-b3bb-931f0267a632">
 
@@ -154,9 +154,10 @@ useEffect(() => {
   })
 }, [])
 ```
+
 ## Roadmap 🛣️
 
-Here's a glimpse of what we've accomplished so far and what's in store for the future of `react-tweakpane`:
+Take a peek at what we've already made so far and our future plans for `react-tweakpane`:
 
 - [x] **Core Functionality**
 - [x] **Inputs Hooks**

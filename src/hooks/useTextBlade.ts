@@ -1,4 +1,3 @@
-import { BaseBladeParams, Bindable, TpChangeEvent } from '@tweakpane/core'
 import {
   MutableRefObject,
   useCallback,
@@ -7,7 +6,7 @@ import {
   useRef,
   useState,
 } from 'react'
-import { TextApi } from 'tweakpane'
+import { BaseBladeParams, TextApi, TpChangeEvent } from 'tweakpane'
 import { FolderInstance } from './usePaneFolder'
 
 interface UseTextBladeParams<T> extends BaseBladeParams {
@@ -19,18 +18,18 @@ interface UseTextBladeParams<T> extends BaseBladeParams {
 
 type BladeRef<V> = MutableRefObject<TextApi<V>>
 
-export function useTextBlade<T extends Bindable, V>(
+export function useTextBlade<T extends Object, V>(
   paneRef: MutableRefObject<FolderInstance<T>>,
   bladeParams: UseTextBladeParams<V>
 ): [V, (value: V) => void, BladeRef<T>]
 
-export function useTextBlade<T extends Bindable, V>(
+export function useTextBlade<T extends Object, V>(
   paneRef: MutableRefObject<FolderInstance<T>>,
   bladeParams: UseTextBladeParams<V>,
   onChange: (event: TpChangeEvent<V>) => void
 ): [never, (value: V) => void, BladeRef<T>]
 
-export function useTextBlade<T extends Bindable, V>(
+export function useTextBlade<T extends Object, V>(
   paneRef: MutableRefObject<FolderInstance<T>>,
   params: UseTextBladeParams<V>,
   onChange?: (event: TpChangeEvent<V>) => void

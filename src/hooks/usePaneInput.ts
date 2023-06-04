@@ -1,9 +1,4 @@
-import {
-  Bindable,
-  InputBindingApi,
-  InputParams,
-  TpChangeEvent,
-} from '@tweakpane/core'
+import { InputBindingApi, InputParams, TpChangeEvent } from '@tweakpane/core'
 
 import {
   RefObject,
@@ -19,7 +14,7 @@ type InputRef<T> = RefObject<InputBindingApi<unknown, T>>
 /**
  * Does not return the value and doesn't trigger an update because onChange is specified
  */
-export function usePaneInput<T extends Bindable, K extends keyof T>(
+export function usePaneInput<T extends Object, K extends keyof T>(
   ref: RefObject<FolderInstance<T>>,
   key: K,
   inputParams: InputParams | undefined,
@@ -28,7 +23,7 @@ export function usePaneInput<T extends Bindable, K extends keyof T>(
 
 // Skips inputParams
 /** Does not return the value and doesn't trigger an update because onChange is specified */
-export function usePaneInput<T extends Bindable, K extends keyof T>(
+export function usePaneInput<T extends Object, K extends keyof T>(
   paneRef: RefObject<FolderInstance<T>>,
   key: K,
   onChange: (event: TpChangeEvent<T[K]>) => void
@@ -37,21 +32,21 @@ export function usePaneInput<T extends Bindable, K extends keyof T>(
 /**
  * Returns the value and triggers an update
  */
-export function usePaneInput<T extends Bindable, K extends keyof T>(
+export function usePaneInput<T extends Object, K extends keyof T>(
   paneRef: RefObject<FolderInstance<T>>,
   key: K,
   inputParams?: InputParams | undefined,
   onChange?: undefined
 ): [T[K], (value: T[K]) => void, InputRef<T[K]>]
 
-export function usePaneInput<T extends Bindable, K extends keyof T>(
+export function usePaneInput<T extends Object, K extends keyof T>(
   paneRef: RefObject<FolderInstance<T>>,
   key: K,
   inputParams?: InputParams | undefined,
   onChange?: undefined
 ): [T[K], (value: T[K]) => void, InputRef<T[K]>]
 
-export function usePaneInput<T extends Bindable, K extends keyof T>(
+export function usePaneInput<T extends Object, K extends keyof T>(
   parentRef: RefObject<FolderInstance<T>>,
   key: K,
   inputParamsArg:

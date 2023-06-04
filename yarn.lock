@@ -548,17 +548,6 @@
     suspend-react "^0.0.8"
     zustand "^3.7.1"
 
-"@react-three/postprocessing@^2.14.6":
-  version "2.14.6"
-  resolved "https://registry.yarnpkg.com/@react-three/postprocessing/-/postprocessing-2.14.6.tgz#efa4357ff8a1154f790dc6f09476065879ac0e95"
-  integrity sha512-KKpAFCtpRWdGgHHdPnFvi2c4n1pnzSs4suH4exX4OgEZ5s9YLPBXYxwzv/KkA8gjOhf3FawhwkwqIl1wZDC9ag==
-  dependencies:
-    maath "^0.5.3"
-    n8ao "^1.4.2"
-    postprocessing "^6.31.0"
-    screen-space-reflections "2.5.0"
-    three-stdlib "^2.23.4"
-
 "@rollup/plugin-commonjs@^25.0.0":
   version "25.0.0"
   resolved "https://registry.yarnpkg.com/@rollup/plugin-commonjs/-/plugin-commonjs-25.0.0.tgz#ef55d12415dfcfb77fd52650dc1448c8aae8ed5c"
@@ -1403,7 +1392,7 @@ lru-cache@^6.0.0:
   dependencies:
     yallist "^4.0.0"
 
-maath@^0.5.2, maath@^0.5.3:
+maath@^0.5.2:
   version "0.5.3"
   resolved "https://registry.yarnpkg.com/maath/-/maath-0.5.3.tgz#777a1f9b8463c6ffb199ea43406874a357c0cd58"
   integrity sha512-ut63A4zTd9abtpi+sOHW1fPWPtAFrjK0E17eAthx1k93W/T2cWLKV5oaswyotJVDvvW1EXSdokAqhK5KOu0Qdw==
@@ -1468,11 +1457,6 @@ ms@2.1.2:
   version "2.1.2"
   resolved "https://registry.yarnpkg.com/ms/-/ms-2.1.2.tgz#d09d1f357b443f493382a8eb3ccd183872ae6009"
   integrity sha512-sGkPx+VjMtmA6MX27oA4FBFELFCZZ4S4XqeGOXCv68tT+jb3vk/RyaKWP0PTKyWtmLSM0b+adUTEvbs1PEaH2w==
-
-n8ao@^1.4.2:
-  version "1.4.4"
-  resolved "https://registry.yarnpkg.com/n8ao/-/n8ao-1.4.4.tgz#aac2898fe9c0539d8e1b8094f54dea4463174d0e"
-  integrity sha512-+XeZc1jv4EbGaz0fhxPnfxn+KcHLRaZu3rkh9RqlQalN425JtXOAtG0N29P2whntwe6+5SEFdufMVhEPYKDYBg==
 
 nanoid@^3.3.4, nanoid@^3.3.6:
   version "3.3.6"
@@ -1549,11 +1533,6 @@ postcss@^8.4.23:
     nanoid "^3.3.6"
     picocolors "^1.0.0"
     source-map-js "^1.0.2"
-
-postprocessing@^6.31.0:
-  version "6.31.0"
-  resolved "https://registry.yarnpkg.com/postprocessing/-/postprocessing-6.31.0.tgz#0d3d0157bfe963d2a66a73ee16cfa81a99138419"
-  integrity sha512-h1g2KDVrTS6QB4AHP55opp8FYzq66jJHh4JIFCptaj283RUX1y/tPkv8FBB2oK4WYrdPgqvElnKrXZwgiLWeHQ==
 
 potpack@^1.0.1:
   version "1.0.2"
@@ -1687,7 +1666,7 @@ rollup-plugin-peer-deps-external@^2.2.4:
   resolved "https://registry.yarnpkg.com/rollup-plugin-peer-deps-external/-/rollup-plugin-peer-deps-external-2.2.4.tgz#8a420bbfd6dccc30aeb68c9bf57011f2f109570d"
   integrity sha512-AWdukIM1+k5JDdAqV/Cxd+nejvno2FVLVeZ74NKggm3Q5s9cbbcOgUPGdbxPi4BXu7xGaZ8HG12F+thImYu/0g==
 
-rollup@^3.21.0:
+rollup@^3.21.0, rollup@^3.23.0:
   version "3.23.0"
   resolved "https://registry.yarnpkg.com/rollup/-/rollup-3.23.0.tgz#b8d6146dac4bf058ee817f92820988e9b358b564"
   integrity sha512-h31UlwEi7FHihLe1zbk+3Q7z1k/84rb9BSwmBSr/XjOCEaBJ2YyedQDuM0t/kfOS0IxM+vk1/zI9XxYj9V+NJQ==
@@ -1719,11 +1698,6 @@ scheduler@^0.23.0:
   integrity sha512-CtuThmgHNg7zIZWAXi3AsyIzA3n4xx7aNyjwC2VJldO2LMVDhFK+63xGqq6CsJH4rTAt6/M+N4GhZiDYPx9eUw==
   dependencies:
     loose-envify "^1.1.0"
-
-screen-space-reflections@2.5.0:
-  version "2.5.0"
-  resolved "https://registry.yarnpkg.com/screen-space-reflections/-/screen-space-reflections-2.5.0.tgz#2a6ea982da96f9c35f34a361b2555439f9fbb1f6"
-  integrity sha512-fWSDMhJS0xwD3LTxRRch7Lb9NzxsR66sCmtDmAA7i+OGnghUrBBsrha85ng7StnCBaLq/BKmZ97dLxWd1XgWdQ==
 
 semver@7.3.8, semver@~7.3.0:
   version "7.3.8"
@@ -1841,7 +1815,7 @@ three-mesh-bvh@^0.5.23:
   resolved "https://registry.yarnpkg.com/three-mesh-bvh/-/three-mesh-bvh-0.5.24.tgz#56dd27ad35bfbafacedaba4a4d567723bbdd686c"
   integrity sha512-VTIgfjz8aFoPKTQoMIQQv9jJD4ybFRZuKKE1/kqy78FQcuHQ0+iIWv7C5cSb2inlvs7bNMVY3yRx3RXGZfrvzQ==
 
-three-stdlib@^2.22.10, three-stdlib@^2.23.4:
+three-stdlib@^2.22.10:
   version "2.23.4"
   resolved "https://registry.yarnpkg.com/three-stdlib/-/three-stdlib-2.23.4.tgz#21e415573f9cddb8dbc2dea0495cc35d8d390b8b"
   integrity sha512-bNtKL0UsE/TeSQ30tb9qDoGEuO6hqJfLFVqIiWlVpgAs2W/aZcpSISaLP3q+L4E9NSGmpRzI3dGufmDj0AnQ7Q==
@@ -1978,13 +1952,6 @@ vite-plugin-dts@^2.3.0:
     kolorist "^1.7.0"
     magic-string "^0.29.0"
     ts-morph "18.0.0"
-
-vite-plugin-glsl@^1.1.2:
-  version "1.1.2"
-  resolved "https://registry.yarnpkg.com/vite-plugin-glsl/-/vite-plugin-glsl-1.1.2.tgz#7f1750bb90f4e70b3459039e1b1d201bb099d519"
-  integrity sha512-zmXsfc1vn2MlYve9t3FAoWuhLyoCkNS1TuQL+TkXZL7tGmBjRErp10eNYxcse5tK9oUC5MyJpNc4ElpQnx8DoA==
-  dependencies:
-    "@rollup/pluginutils" "^5.0.2"
 
 vite-tsconfig-paths@^4.2.0:
   version "4.2.0"

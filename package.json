@@ -1,6 +1,6 @@
 {
   "name": "react-tweakpane",
-  "version": "1.0.0",
+  "version": "0.8.0",
   "main": "dist/index.js",
   "types": "src/index.d.ts",
   "author": "MelonCode",
@@ -16,13 +16,13 @@
     "node": ">=10"
   },
   "peerDependencies": {
-    "@tweakpane/core": "^1.1.8",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "tweakpane": "^3.1.9"
   },
   "devDependencies": {
     "@react-three/drei": "^9.70.0",
     "@react-three/fiber": "^8.13.0",
-    "@react-three/postprocessing": "^2.14.6",
     "@rollup/plugin-commonjs": "^25.0.0",
     "@rollup/plugin-node-resolve": "^15.0.2",
     "@rollup/plugin-terser": "^0.4.3",
@@ -34,14 +34,17 @@
     "@types/react-dom": "^18.2.4",
     "@types/three": "^0.152.1",
     "@vitejs/plugin-react": "^4.0.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "rollup": "^3.23.0",
     "rollup-plugin-peer-deps-external": "^2.2.4",
     "size-limit": "^8.2.4",
     "three": "^0.152.2",
     "tslib": "^2.5.0",
+    "tweakpane": "^3.1.9",
     "typescript": "^5.0.4",
     "vite": "^4.3.7",
     "vite-plugin-dts": "^2.3.0",
-    "vite-plugin-glsl": "^1.1.2",
     "vite-tsconfig-paths": "^4.2.0"
   },
   "exports": {
@@ -50,10 +53,5 @@
       "require": "./dist/index.umd.cjs",
       "types": "./dist/index.d.ts"
     }
-  },
-  "dependencies": {
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "tweakpane": "^3.1.9"
   }
 }
