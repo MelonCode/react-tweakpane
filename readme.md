@@ -63,9 +63,9 @@ const folder = usePaneFolder(pane, {
   title: 'Box Settings',
 })
 
-const [pos] = usePaneInput(pane, 'position')
-const [rotation] = usePaneInput(pane, 'rotation')
-const [scale] = usePaneInput(pane, 'scale')
+const [pos] = usePaneInput(folder, 'position')
+const [rotation] = usePaneInput(folder, 'rotation')
+const [scale] = usePaneInput(folder, 'scale')
 ```
 
 ### Customizing with Options
