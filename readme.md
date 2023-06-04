@@ -128,8 +128,7 @@ const [fruit] = useListBlade(pane, {
       value: 'banana',
     },
   ],
-  value: 'box',
-  view: 'list',
+  value: 'apple'
 })
 
 // Text blade with number input & rounding
