@@ -38,14 +38,18 @@ usePaneInput(pane, 'position', (event) => {
   // Do what you need
 })
 
-// You still can access setValue to write manually
+// onChange function is memoized, so you can rest easy! 😇
+usePaneInput(pane, 'position', (event) => {
+  const { x, y, z } = event.value
+  // Do what you need
+})
+
+// It is still possible to set value manually
 const [, setValue] = usePaneInput(pane, 'position', (event) => {
   const { x, y, z } = event.value
   // Do what you need
 })
 ```
-
-> onChange function is memoized, so you can rest easy! 😇
 
 ### Organizing with Folders
 

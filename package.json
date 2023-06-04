@@ -2,10 +2,14 @@
   "name": "react-tweakpane",
   "version": "0.8.0",
   "main": "dist/index.js",
+  "module": "dist/index.cjs",
   "types": "src/index.d.ts",
   "author": "MelonCode",
   "type": "module",
   "license": "MIT",
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
@@ -50,7 +54,7 @@
   "exports": {
     ".": {
       "import": "./dist/index.js",
-      "require": "./dist/index.umd.cjs",
+      "require": "./dist/index.cjs",
       "types": "./dist/index.d.ts"
     }
   }
