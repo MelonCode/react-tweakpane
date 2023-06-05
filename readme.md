@@ -25,6 +25,19 @@ For detailed information, be sure to visit the [Tweakpane documentation](https:/
 
 ## Usage 🎯
 
+You can install the necessary packages using the following commands:
+
+With npm:
+```bash
+npm install tweakpane @tweakpane/core react-tweakpane
+```
+
+With yarn:
+```bash
+yarn add tweakpane @tweakpane/core react-tweakpane
+```
+
+
 ### Basic Example
 
 Here's a basic example of how you can integrate Tweakpane in your React app:
