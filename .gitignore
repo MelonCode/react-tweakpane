@@ -22,3 +22,5 @@ gh-pages
 *.njsproj
 *.sln
 *.sw?
+package-lock.json
+.qodo

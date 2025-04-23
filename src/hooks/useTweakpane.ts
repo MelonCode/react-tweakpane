@@ -1,4 +1,4 @@
-import { MutableRefObject, useEffect, useLayoutEffect, useRef } from 'react'
+import { RefObject, useEffect, useLayoutEffect, useRef } from 'react'
 import { Pane } from 'tweakpane'
 
 // This one is copied from tweakpane to avoid dist dependency
@@ -29,7 +29,7 @@ export interface PaneInstance<T extends Object> {
 export function useTweakpane<T extends Object>(
   params: T = {} as T,
   paneConfig: PaneConfig = {}
-): MutableRefObject<PaneInstance<T>> {
+): RefObject<PaneInstance<T>> {
   const paneRef = useRef<PaneInstance<T>>({
     instance: null,
     params: params,

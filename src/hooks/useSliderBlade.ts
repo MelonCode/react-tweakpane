@@ -1,6 +1,6 @@
 import { BaseBladeParams, TpChangeEvent } from '@tweakpane/core'
 import {
-  MutableRefObject,
+  RefObject,
   useCallback,
   useEffect,
   useLayoutEffect,
@@ -19,21 +19,21 @@ interface UseSliderBladeParams extends BaseBladeParams {
   value?: number
 }
 
-type BladeRef = MutableRefObject<SliderBladeApi>
+type BladeRef = RefObject<SliderBladeApi>
 
 export function useSliderBlade<T extends Object, V>(
-  paneRef: MutableRefObject<FolderInstance<T>>,
+  paneRef: RefObject<FolderInstance<T>>,
   bladeParams: UseSliderBladeParams
 ): [number, (value: number) => void, BladeRef]
 
 export function useSliderBlade<T extends Object, V>(
-  paneRef: MutableRefObject<FolderInstance<T>>,
+  paneRef: RefObject<FolderInstance<T>>,
   bladeParams: UseSliderBladeParams,
   onChange: (event: TpChangeEvent<number>) => void
 ): [never, (value: number) => void, BladeRef]
 
 export function useSliderBlade<T extends Object>(
-  paneRef: MutableRefObject<FolderInstance<T>>,
+  paneRef: RefObject<FolderInstance<T>>,
   params: UseSliderBladeParams,
   onChange?: (event: TpChangeEvent<number>) => void
 ) {

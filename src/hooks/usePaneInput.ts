@@ -89,7 +89,7 @@ export function usePaneInput<T extends Object, K extends keyof T>(
       .addBinding(parentRef.current!.params, key, BindingParams)
       .on('change', handler)
       
-    inputRef.current = input
+    inputRef.current = input as InputBindingApi<unknown, T[K]>
     // inputRef.current.controller.importState.arguments = input
     return () => {
       if (input.element) input.dispose()

@@ -5,7 +5,7 @@ import {
   normalizeListOptions,
 } from '@tweakpane/core'
 import {
-  MutableRefObject,
+  RefObject,
   useCallback,
   useEffect,
   useLayoutEffect,
@@ -23,18 +23,18 @@ interface UseSliderBladeParams<T> extends BaseBladeParams {
 }
 
 export function useListBlade<T extends Object, V>(
-  paneRef: MutableRefObject<PaneInstance<T>>,
+  paneRef: RefObject<PaneInstance<T>>,
   bladeParams: UseSliderBladeParams<V>
-): [V, (value: V) => void, MutableRefObject<ListBladeApi<V>>]
+): [V, (value: V) => void, RefObject<ListBladeApi<V>>]
 
 export function useListBlade<T extends Object, V>(
-  paneRef: MutableRefObject<PaneInstance<T>>,
+  paneRef: RefObject<PaneInstance<T>>,
   bladeParams: UseSliderBladeParams<V>,
   onChange: (event: TpChangeEvent<V>) => void
-): [never, (value: V) => void, MutableRefObject<ListBladeApi<V>>]
+): [never, (value: V) => void, RefObject<ListBladeApi<V>>]
 
 export function useListBlade<T extends Object, V>(
-  paneRef: MutableRefObject<PaneInstance<T>>,
+  paneRef: RefObject<PaneInstance<T>>,
   params: UseSliderBladeParams<V>,
   onChange?: (event: TpChangeEvent<V>) => void
 ) {

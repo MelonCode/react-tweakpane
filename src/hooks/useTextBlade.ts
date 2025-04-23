@@ -1,5 +1,5 @@
 import {
-  MutableRefObject,
+  RefObject,
   useCallback,
   useEffect,
   useLayoutEffect,
@@ -16,21 +16,21 @@ interface UseTextBladeParams<T> extends BaseBladeParams {
   label?: string
 }
 
-type BladeRef<V> = MutableRefObject<TextBladeApi<V>>
+type BladeRef<V> = RefObject<TextBladeApi<V>>
 
 export function useTextBlade<T extends Object, V>(
-  paneRef: MutableRefObject<FolderInstance<T>>,
+  paneRef: RefObject<FolderInstance<T>>,
   bladeParams: UseTextBladeParams<V>
 ): [V, (value: V) => void, BladeRef<T>]
 
 export function useTextBlade<T extends Object, V>(
-  paneRef: MutableRefObject<FolderInstance<T>>,
+  paneRef: RefObject<FolderInstance<T>>,
   bladeParams: UseTextBladeParams<V>,
   onChange: (event: TpChangeEvent<V>) => void
 ): [never, (value: V) => void, BladeRef<T>]
 
 export function useTextBlade<T extends Object, V>(
-  paneRef: MutableRefObject<FolderInstance<T>>,
+  paneRef: RefObject<FolderInstance<T>>,
   params: UseTextBladeParams<V>,
   onChange?: (event: TpChangeEvent<V>) => void
 ) {

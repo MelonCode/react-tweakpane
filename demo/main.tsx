@@ -1,12 +1,13 @@
 import { OrbitControls, PerspectiveCamera, Sky, Stats } from '@react-three/drei'
 import { Canvas } from '@react-three/fiber'
-import React, { useRef } from 'react'
+import React, { useRef, useState } from 'react'
 import { Color, Mesh, MeshStandardMaterial, Vector3 } from 'three'
 import {
   useListBlade,
   usePaneFolder,
   usePaneInput,
   useSliderBlade,
+  useButtonBlade,
   useTextBlade,
   useTweakpane,
 } from '../src'
@@ -14,6 +15,7 @@ import './index.css'
 
 export function App() {
   const meshRef = useRef<Mesh>(null!)
+  const [fruitCount, setFruitCount] = useState(0)
 
   const pane = useTweakpane(
     {
@@ -21,6 +23,7 @@ export function App() {
       rotation: { x: 0, y: 0, z: 0 },
       scale: { x: 1, y: 1, z: 1 },
       color: '#ffa500',
+      bool: false,
     },
     {
       title: 'Scene Settings',
@@ -73,6 +76,22 @@ export function App() {
     view: 'list',
   })
 
+  useButtonBlade(pane, {
+    title: 'Add Fruit',
+    label: 'Counter'
+  }, () => {
+    setFruitCount(prev => prev + 1)
+  })
+
+  const [outBool] = usePaneInput(
+    pane,
+    'bool',
+    {
+      label: 'Boolean',
+      value: false
+    }
+  )
+  
   const folder = usePaneFolder(pane, {
     title: 'Box Settings',
   })
@@ -170,7 +189,7 @@ export function App() {
       </Canvas>
       <div className="tooltip">
         <h1>
-          {title} {fruit}
+          {title} {fruit} {fruitCount} {outBool ? '✓' : '✗'}
         </h1>
       </div>
     </div>
